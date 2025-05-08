@@ -1,0 +1,50 @@
+/* topo do background */
+.st-emotion-cache-1eyfjps {
+    display: block;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 3.75rem;
+    background: rgb(230, 234, 241, 0.5);
+    outline: none;
+    z-index: 999990;
+}
+
+
+/* Estilo para o título */
+.st-emotion-cache-16tyu1 h1 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #333;
+    padding: 0rem 0px rem;
+}
+
+/* Estilo para o título "Principais Indicadores" */
+.st-emotion-cache-16tyu1 h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 0px;
+}
+
+/* Estilo para as colunas de métricas */
+.metric-card {
+    background-color: white;
+    /* border: 2px solid #ddd; */
+    border-radius: 10px;
+    box-shadow: 10px 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.metric-card h3 {
+    color: #333;
+    font-size: 15px;
+    margin-bottom: 0px; /* Menos distância entre o título e o número */
+}
+
+.metric-card p {
+    font-size: 45px; /* Tamanho maior para os números */
+    font-weight: bold;
+    color: #000;
+}
