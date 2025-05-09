@@ -137,9 +137,9 @@ fig, ax = plt.subplots(figsize=(10, 4))
 sns.barplot(x='região', y='conversão', data=conversion_rates, palette='Blues_d', ax=ax)
 
 # Configurar título e rótulos
-ax.set_title('Taxa de Conversão por Região com Tamanho da Amostra', fontsize=11, pad=15)
-ax.set_xlabel('Região', fontsize=9)
-ax.set_ylabel('Taxa de Conversão (%)', fontsize=9)
+ax.set_title('Taxa de Conversão por Região com Tamanho da Amostra', fontsize=9, pad=15)
+ax.set_xlabel('Região', fontsize=6)
+ax.set_ylabel('Taxa de Conversão (%)', fontsize=6)
 ax.set_ylim(0, 100)  # Definir limite do eixo y para melhor visualização
 
 # Adicionar valores nas barras (taxa de conversão e tamanho da amostra)
@@ -188,12 +188,12 @@ with col1:
     # Adicionar anotações
     for i, feedback in enumerate(feedbacks):
         plt.text(i - bar_width/2, conversao[i] + 1, f'{conversao[i]:.1f}%\nN={int(sample_sizes[i])}',
-                ha='center', fontsize=8)
+                ha='center', fontsize=6)
         plt.text(i + bar_width/2, pedidos[i] + 0.5, f'{pedidos[i]:.1f}',
-                ha='center', fontsize=8)
+                ha='center', fontsize=6)
 
     # Adicionar título e rótulos
-    plt.title('Taxa de Conversão e Média de Pedidos por Feedback', fontsize=15)
+    plt.title('Taxa de Conversão e Média de Pedidos por Feedback', fontsize=9)
     plt.xlabel('Feedback', fontsize=11)
     plt.ylabel('Valor', fontsize=11)
     plt.xticks(x, feedbacks)
@@ -230,9 +230,9 @@ with col2:
                     xytext=(0, 10), textcoords='offset points')
 
     # Configurar título e rótulos
-    plt.title('Quantidade Total de Pedidos por Ciclo de Vida no Pós-Campanha', fontsize=15, pad=15)
-    plt.xlabel('Ciclo de Vida', fontsize=9)
-    plt.ylabel('Quantidade Total de Pedidos', fontsize=9)
+    plt.title('Quantidade Total de Pedidos por Ciclo de Vida no Pós-Campanha', fontsize=9, pad=15)
+    plt.xlabel('Ciclo de Vida', fontsize=6)
+    plt.ylabel('Quantidade Total de Pedidos', fontsize=6)
 
     # Exibir gráfico
     st.pyplot(plt)
@@ -249,7 +249,7 @@ contagem = df3.groupby(['feedback', 'ciclo de vida']).size().unstack().fillna(0)
 # Gráfico de barras empilhadas
 ax = contagem.plot(kind='bar', stacked=True, figsize=(10, 4), colormap='Set2')
 
-plt.title("Distribuição de Ciclo de Vida por Tipo de Feedback", fontsize=13)
+plt.title("Distribuição de Ciclo de Vida por Tipo de Feedback", fontsize=9)
 plt.xlabel("Tipo de Feedback")
 plt.ylabel("Número de Motoristas")
 plt.xticks(rotation=0)
@@ -292,7 +292,7 @@ ciclo_stats = df3.groupby('ciclo de vida')[['conversão', 'pedidos']].mean().res
 with col1:
     fig1, ax1 = plt.subplots(figsize=(6, 5))
     sns.barplot(data=ciclo_stats, x='ciclo de vida', y='conversão', palette='Set2', ax=ax1)
-    ax1.set_title('Conversão Média por Ciclo de Vida', fontsize=12)
+    ax1.set_title('Conversão Média por Ciclo de Vida', fontsize=9)
     ax1.set_ylabel('Conversão Média')
     ax1.set_xlabel('Ciclo de Vida')
     ax1.set_ylim(0, 1)
@@ -304,7 +304,7 @@ with col1:
 with col2:
     fig2, ax2 = plt.subplots(figsize=(6, 5))
     sns.barplot(data=ciclo_stats, x='ciclo de vida', y='pedidos', palette='Set2', ax=ax2)
-    ax2.set_title('Número Médio de Pedidos por Ciclo de Vida', fontsize=12)
+    ax2.set_title('Número Médio de Pedidos por Ciclo de Vida', fontsize=9)
     ax2.set_ylabel('Pedidos Médios')
     ax2.set_xlabel('Ciclo de Vida')
     for index, row in ciclo_stats.iterrows():
