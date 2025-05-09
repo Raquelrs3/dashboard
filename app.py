@@ -177,7 +177,7 @@ with col1:
     sample_sizes = metrics['sample_size']
 
     # Configurar gráfico
-    plt.figure(figsize=(8, 7))
+    plt.figure(figsize=(8, 6))
     bar_width = 0.35
     x = range(len(feedbacks))
 
@@ -218,7 +218,7 @@ with col2:
     pedidos_por_ciclo = pedidos_por_motorista_ciclo.groupby('ciclo de vida')['pedidos'].sum().reset_index()
 
     # Plotar gráfico de barras
-    plt.figure(figsize=(8, 7))
+    plt.figure(figsize=(8, 6))
     ax = sns.barplot(x='ciclo de vida', y='pedidos', data=pedidos_por_ciclo, palette="Set1")
 
     # Adicionar os valores acima das barras
@@ -247,7 +247,7 @@ st.markdown("---")
 contagem = df3.groupby(['feedback', 'ciclo de vida']).size().unstack().fillna(0)
 
 # Gráfico de barras empilhadas
-ax = contagem.plot(kind='bar', stacked=True, figsize=(10, 8), colormap='Set2')
+ax = contagem.plot(kind='bar', stacked=True, figsize=(10, 4), colormap='Set2')
 
 plt.title("Distribuição de Ciclo de Vida por Tipo de Feedback", fontsize=13)
 plt.xlabel("Tipo de Feedback")
